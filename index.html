@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Private project preview</title>
+<style>
+  :root { font: 16px/1.5 system-ui, sans-serif; color: #142531; background: #f2f6f5; }
+  body { margin: 0; }
+  main { max-width: 26rem; margin: 0 auto; padding: 16vh 1.25rem 2rem; }
+  h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); margin: 0 0 1rem; }
+  form { display: grid; gap: .65rem; }
+  label { font-weight: 600; }
+  input, button { font: inherit; box-sizing: border-box; border: 1px solid #acbebb; border-radius: .4rem; padding: .65rem .75rem; }
+  button { justify-self: start; color: white; background: #145d65; border-color: #145d65; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: wait; }
+  :focus-visible { outline: 3px solid #145d65; outline-offset: 3px; }
+  iframe { display: block; width: 100%; height: 100vh; height: 100dvh; border: 0; }
+  [hidden] { display: none; }
+</style>
+<main id="gate">
+  <h1>Private project preview</h1>
+  <form id="access">
+    <label for="key">Access key</label>
+    <input id="key" type="password" autocomplete="off" required>
+    <button type="submit">Open preview</button>
+  </form>
+  <p id="status" role="status"></p>
+  <noscript>Enable JavaScript to open the encrypted preview.</noscript>
+</main>
+<iframe id="preview" title="Project preview" referrerpolicy="no-referrer" hidden></iframe>
+<script src="unlock.js" defer></script>
+</html>
